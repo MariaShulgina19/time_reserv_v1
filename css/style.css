@@ -1,0 +1,241 @@
+#first{
+    border: solid 1px; 
+    border-color:blue;
+    background-color: rgb(172, 243, 243);
+}
+
+.auth-views{
+    border: solid 1px; 
+    border-color:blues;
+    color: aliceblue;
+    background-color: rgb(12, 99, 80);
+    /*block-size: 200px, 200px;*/
+    
+    text-align: center;
+    font-family: Tahoma, Geneva, sans-serif; 
+    margin: 100px;
+    cursor: pointer;
+    font-size: 25px;
+    border-radius: 12px;
+}
+
+
+.button1 {
+
+    /*background-color: #4CAF50; /* Green */
+    border: none;
+    /*color: white;*/
+    width: 400px;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 30px;
+    border-radius: 12px;
+    transition-duration: 0.4s;
+    border: solid 1px; 
+    color: rgb(12, 99, 80);
+}
+
+.button2 {
+
+    /*background-color: #4CAF50; /* Green */
+    border: none;
+    /*color: white;*/
+    width: 200px;
+    padding: 15px 32px;
+    /* text-align: center; */
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 12px;
+    transition-duration: 0.4s;
+    border: solid 1px; 
+    border-color: rgb(12, 99, 80);
+}
+
+.button3 {
+
+    /*background-color: #4CAF50; /* Green */
+    border: none;
+    /*color: white;*/
+    width: 150px;
+    padding: 15px 32px;
+    /* text-align: center; */
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 12px;
+    transition-duration: 0.4s;
+    border: solid 1px; 
+    border-color: rgb(12, 99, 80);
+}
+
+.button4 {
+
+    /*background-color: #4CAF50; /* Green */
+    border: none;
+    /*color: white;*/
+    width: 200px;
+    padding: 15px 32px;
+    /* text-align: center; */
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 12px;
+    transition-duration: 0.4s;
+    border: solid 1px; 
+    background-color:rgb(126, 28, 44);
+    color: white;
+    border-color: rgb(12, 99, 80);
+}
+.button5 {
+
+    /*background-color: #4CAF50; /* Green */
+    border: none;
+    /*color: white;*/
+    width: 200px;
+    padding: 15px 32px;
+    /* text-align: center; */
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 12px;
+    transition-duration: 0.4s;
+    border: solid 1px; 
+    background-color: rgb(34, 77, 77);
+    color: white;
+    border-color: rgb(12, 99, 80);
+}
+
+.button1:hover { 
+    background-color: rgb(12, 99, 80); /* Green */
+    color: white;
+  }
+
+.button2:hover{
+    background-color: rgb(34, 77, 77);
+    color: white;
+  }
+  .button3:hover{
+    background-color: rgb(34, 77, 77);
+    color: white;
+  }
+
+  .button4:hover{
+    background-color: rgb(34, 77, 77);
+    color: white;
+  }
+
+  .button5:hover { 
+    background-color:white; /* Green */
+    color:rgb(12, 99, 80);
+  }
+.input1 {
+
+
+    /*background-color: #4CAF50; /* Green */
+    width: 400px;
+    border: none;
+    /*color: white;*/
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 30px;
+    border-radius: 12px;
+    border: solid 1px; 
+    border-color: rgb(12, 99, 80);
+    
+    
+}
+
+.input1:hover {
+    border-color:white; /* Green */
+    
+}
+
+.input2 {
+
+
+    /*background-color: #4CAF50; /* Green */
+    border: none;
+    /*color: white;*/
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 12px;
+    border: solid 1px; 
+    border-color: rgb(12, 99, 80);
+}
+.inputAmount {
+
+
+    /*background-color: #4CAF50; /* Green */
+    border: none;
+    /*color: white;*/
+    width: 100px;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 12px;
+    border: solid 1px; 
+    border-color: rgb(12, 99, 80);
+}
+.input2:hover {
+    border-color:white; /* White */
+    
+}
+.inputAmount:hover {
+    border-color:white; /* White */
+    
+}
+
+.list-views{
+    border: solid 1px; 
+    border-color:blues;
+    color: aliceblue;
+    background-color: rgb(34, 77, 77);
+    /*block-size: 200px, 200px;*/
+    font-family: Tahoma, Geneva, sans-serif;
+    padding-left: 20px;
+    border-radius: 12px;
+    /* position: fixed; */
+   
+}
+.list-views:hover { 
+    background-color: rgb(12, 99, 80); /* Green */
+    color: white;
+  }
+
+.list-views2{
+    color: rgb(34, 77, 77);
+    /* color: rgb(126, 28, 44); */
+    border: solid 1px; 
+    border-color:blues;
+    background-color:rgb(219, 250, 250);
+    /*block-size: 200px, 200px;*/
+    font-family: Tahoma, Geneva, sans-serif;
+    padding-left: 20px;
+    border-radius: 12px;
+   
+}
+
+.list-views2:hover { 
+    background-color: rgb(12, 99, 80); /* Green */
+    color: white;
+  }
+  .image1{
+
+    width:150px;
+    display: inline-block;
+ 
+    border-radius: 12px;
+    border: solid 1px; 
+    border-color: rgb(12, 99, 80);
+    vertical-align: bottom;
+  }
