@@ -93,7 +93,7 @@ const post_reservation = (req, res, next) => {
         
     });
     
-        if  (req.body.reservation_end > req.body.reservation_start && new_reservation.start > time_stamp ){
+       // if  (req.body.reservation_end > req.body.reservation_start && new_reservation.start > time_stamp ){
 
             new_reservation.save().then(() => {
                 console.log('reservation saved');
@@ -106,13 +106,13 @@ const post_reservation = (req, res, next) => {
                 //res.send(err.errmsg);
                 console.log(err);
             });                   
-        }   
+        // }   
 
-        else {
-            //res.send("end time shall be after start time")
-            console.log("start time shall be before time and in future");
-           // return res.redirect('/');
-             };
+        // else {
+        //     //res.send("end time shall be after start time")
+        //     console.log("start time shall be before time and in future");
+        //    // return res.redirect('/');
+        //      };
 };
 
 //UPDATE POST/PUT

@@ -52,7 +52,7 @@ app.post('/logout', auth_controller.post_logout);
 app.get('/', is_logged_handler, reservation_controller.get_reservations);
 app.post('/delete-reservation', is_logged_handler, reservation_controller.post_delete_reservation); //app.delete
 app.get('/reservation/:id', is_logged_handler, reservation_controller.get_reservation);//test to check particular reservation
-//app.get('/reservation/:id', reservation_controller.get_reservation);//test to check particular reservation
+app.get('/reservation/:id', reservation_controller.get_reservation);//test to check particular reservation only by Postman
 app.post('/add-reservation', is_logged_handler, reservation_controller.post_reservation);
 //app.put('/check-reservation', is_logged_handler, reservation_controller.post_check_reservation);
 //app.put('/reservation/:id', is_logged_handler, reservation_controller.post_check_reservation); //put_update_reservation
