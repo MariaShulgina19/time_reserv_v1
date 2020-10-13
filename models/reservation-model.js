@@ -20,11 +20,11 @@ const reservation_schema = new Schema({
 
     duration: {
         type: String,
-        required: false //required: true
+        required: false 
     },
     comment: {
         type: String,
-        required: false //check not neseseraly
+        required: false 
     },
 
     

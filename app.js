@@ -1,3 +1,6 @@
+//Start server: npm run start-dev
+//Shutdown server: CTRL + C in terminal
+
 const express = require('express');
 const PORT = process.env.PORT || 8080;
 const body_parser = require('body-parser');
@@ -7,7 +10,7 @@ const mongoose = require('mongoose');
 //Controllers
 const auth_controller = require('./controllers/auth_controller');
 const reservation_controller = require('./controllers/reservation_controller');
-// const product_controller = require('./controllers/product_controller');
+
 
 
 let app = express();
@@ -59,11 +62,7 @@ app.post('/add-reservation', is_logged_handler, reservation_controller.post_rese
 app.post('/update-reservation', is_logged_handler, reservation_controller.post_update_reservation);
 app.post('/reservation/go_back',is_logged_handler, reservation_controller.post_back_to_reservation);
 
-// //products
-// app.get('/list/:id', is_logged_handler, product_controller.get_products);
-// app.post('/list/delete-product', is_logged_handler, product_controller.post_delete_product);
-// //app.get('/product/:id', is_logged_handler, product_controller.get_product);
-// app.post('/list/add-product', is_logged_handler, product_controller.post_add_product);
+
 
 app.use((req, res, next) => {
     res.status(404);
@@ -72,8 +71,7 @@ app.use((req, res, next) => {
     `);
 });
 
-//Shutdown server CTRL + C in terminal
-//const mongoose_url = 'mongodb+srv://mariaS:MCcUDOIaDWDsnL8l@cluster0-ws0n9.mongodb.net/test?retryWrites=true&w=majority';
+
 const mongoose_url = 'mongodb+srv://time_reservdb:WTKzUjiiLWpqCw0q@cluster0.va8sk.gcp.mongodb.net/time_reservdb?retryWrites=true&w=majority';
 
 mongoose.connect(mongoose_url, {

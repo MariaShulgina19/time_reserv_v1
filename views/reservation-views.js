@@ -1,7 +1,7 @@
 
 
 
-//<input class=input2 type="text" name="duration", value="${reservation.end-reservation.start} " ></input>
+
 const reservations_view = ((data) => {
     let html = `
     <html>
