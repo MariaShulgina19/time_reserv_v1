@@ -36,31 +36,47 @@ app.use((req, res, next) => {
 
 const is_logged_handler = (req, res, next) => {
     if (!req.session.user) {
-        return res.redirect('/login');
+        return res.redirect('/service_root_url/login');
     }
     next();
 };
+
+
 
 //Serve Static files
 app.use('/css', express.static('css'))
 
 //Auth
 app.use(auth_controller.handle_user);
-app.get('/login', auth_controller.get_login);
-app.post('/login', auth_controller.post_login);
-app.post('/register', auth_controller.post_register);
-app.post('/logout', auth_controller.post_logout);
+app.get('/service_root_url/login', auth_controller.get_login);
+app.post('/service_root_url/login', auth_controller.post_login);
+app.post('/service_root_url/register', auth_controller.post_register);
+app.post('/service_root_url/logout', auth_controller.post_logout);
 
 //reservation
-app.get('/', is_logged_handler, reservation_controller.get_reservations);
-app.post('/delete-reservation', is_logged_handler, reservation_controller.post_delete_reservation); //app.delete
-app.get('/reservation/:id', is_logged_handler, reservation_controller.get_reservation);//test to check particular reservation
-app.get('/reservation/:id', reservation_controller.get_reservation);//test to check particular reservation only by Postman
-app.post('/add-reservation', is_logged_handler, reservation_controller.post_reservation);
+app.get('/service_root_url', is_logged_handler, reservation_controller.get_reservations);  ///reservations
+
+//DELETE
+app.post('/service_root_url/delete-reservation', is_logged_handler, reservation_controller.post_delete_reservation); //app.delete
+app.delete('/service_root_url/reservation/:id', is_logged_handler, reservation_controller.delete_delete_reservation);//NEW
+
+//READ
+app.get('/service_root_url/reservation/find/:id', is_logged_handler, reservation_controller.get_reservation);// to check particular reservation by ID
+app.get('/service_root_url/reservation/find/:name', is_logged_handler, reservation_controller.get_reservation_byname);// to check particular reservation by ID CHECK THIS!
+//app.get('/reservation/:id', reservation_controller.get_reservation);//test to check particular reservation only by Postman can be deleted
+
+//ADD
+app.post('/service_root_url/add-reservation', is_logged_handler, reservation_controller.post_reservation);
+
+
+//UPDATE
+app.post('/service_root_url/update-reservation', is_logged_handler, reservation_controller.post_update_reservation);
 //app.put('/check-reservation', is_logged_handler, reservation_controller.post_check_reservation);
-//app.put('/reservation/:id', is_logged_handler, reservation_controller.post_check_reservation); //put_update_reservation
-app.post('/update-reservation', is_logged_handler, reservation_controller.post_update_reservation);
-app.post('/reservation/go_back',is_logged_handler, reservation_controller.post_back_to_reservation);
+app.put('/service_root_url/reservation/:id', is_logged_handler, reservation_controller.put_update_reservation); 
+app.patch('/service_root_url/reservation/:id', is_logged_handler, reservation_controller.patch_update_reservation); 
+
+
+app.post('/service_root_url/reservation/go_back',is_logged_handler, reservation_controller.post_back_to_reservation);
 
 
 

@@ -9,12 +9,12 @@ const login_view = () => {
         <div class="auth-views" >
             <h1> TIME RESERVATION APP </h1>
             <br>
-                <form action="/login" method="POST">
+                <form action="/service_root_url/login" method="POST">
                     <input class=input1 type="text" name="user_name" >
                     <button class=button1 type="submit">Log in</button>
                 </form>
 
-                <form action="/register" method="POST">
+                <form action="/service_root_url/register" method="POST">
                       <input class=input1 type="text" name="user_name" >
                       <button class=button1 type="submit">Register me</button>
                 </form>

@@ -11,7 +11,7 @@ const handle_user = (req, res, next) => {
         next();
     }).catch((err) => {
         console.log(err);
-        res.redirect('/login');
+        res.redirect('/service_root_url/login');
     });
 };
 
@@ -22,7 +22,7 @@ const get_login = (req, res, next) => {
 
 const post_logout = (req, res, next) => {
     req.session.destroy();
-    res.redirect('/login');
+    res.redirect('/service_root_url/login');
 }; 
 
 
@@ -33,9 +33,9 @@ const post_login = (req, res, next) => {
     }).then((user) => {
         if (user) {
             req.session.user = user;
-            return res.redirect('/');
+            return res.redirect('/service_root_url/');
         }
-        res.redirect('/login');
+        res.redirect('/service_root_url/login');
     }).catch(err => {
         //res.status(500);
        // res.send(err.errmsg);
@@ -60,7 +60,7 @@ const post_register = (req, res, next) => {
     }).then((user) => {
         if (user) {
             console.log('User name already registered');
-            return res.redirect('/login');
+            return res.redirect('/service_root_url/login');
         }
 
         let new_user = new user_model({
@@ -76,7 +76,7 @@ const post_register = (req, res, next) => {
             
         }).then(() => {
             
-            return res.redirect('/login');
+            return res.redirect('/service_root_url/login');
         })
         //return res.redirect('/login')
     }).catch(err => {

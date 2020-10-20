@@ -22,7 +22,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{ \"user_name\": \"Frog\"\r\n}",
+					"raw": "{ \"user_name\": \"Maria\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -30,13 +30,14 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/register/",
+					"raw": "localhost:8080/service_root_url/login/",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"register",
+						"service_root_url",
+						"login",
 						""
 					]
 				},
@@ -69,12 +70,13 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/login",
+					"raw": "localhost:8080/service_root_url/login",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
+						"service_root_url",
 						"login"
 					]
 				},
@@ -110,11 +112,14 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080",
+					"raw": "localhost:8080/service_root_url",
 					"host": [
 						"localhost"
 					],
-					"port": "8080"
+					"port": "8080",
+					"path": [
+						"service_root_url"
+					]
 				},
 				"description": "Get all reservations"
 			},
@@ -145,12 +150,13 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/add-reservation",
+					"raw": "localhost:8080/service_root_url/add-reservation",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
+						"service_root_url",
 						"add-reservation"
 					]
 				},
@@ -175,7 +181,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\"reservation_id\":\"5f85b6f586035a79305cb578\"}",
+					"raw": "{\"reservation_id\":\"5f8d9ce41d43fd26b8688e72\"}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -183,16 +189,57 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/delete-reservation",
+					"raw": "localhost:8080/service_root_url/delete-reservation",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
+						"service_root_url",
 						"delete-reservation"
 					]
 				},
 				"description": "delete reservation "
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/reservation/:id",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"user_name\": \"Maria\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/service_root_url/reservation/5f8d9dd71d43fd26b8688e73",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"service_root_url",
+						"reservation",
+						"5f8d9dd71d43fd26b8688e73"
+					]
+				},
+				"description": "DELETE reservation by ID"
 			},
 			"response": []
 		},
@@ -221,12 +268,13 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/update-reservation",
+					"raw": "localhost:8080/service_root_url/update-reservation",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
+						"service_root_url",
 						"update-reservation"
 					]
 				}
@@ -234,7 +282,87 @@
 			"response": []
 		},
 		{
-			"name": "localhost:8080/reservation/5f85afee6e9c0a84f4777fb4",
+			"name": "localhost:8080/service_root_url/reservation/:id",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"reservation_name\":\"swim2\",\r\n\"reservation_start\" :\"2020-10-14 10:47\",\r\n\"reservation_end\":\"2020-10-14 12:47\",\r\n\"reservation_comment\":\"comment\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/service_root_url/reservation/5f8d9caa1d43fd26b8688e70",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"service_root_url",
+						"reservation",
+						"5f8d9caa1d43fd26b8688e70"
+					]
+				},
+				"description": "put/update"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/service_root_url/reservation/:id",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"reservation_name\":\"swim2\",\r\n\"reservation_start\" :\"2020-10-14 10:47\",\r\n\"reservation_end\":\"2020-10-14 12:47\",\r\n\"reservation_comment\":\"comment\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/service_root_url/reservation/5f8d9caa1d43fd26b8688e70",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"service_root_url",
+						"reservation",
+						"5f8d9caa1d43fd26b8688e70"
+					]
+				},
+				"description": "partly updating"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/reservation/find/:id",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -261,17 +389,66 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/reservation/5f85afee6e9c0a84f4777fb4",
+					"raw": "localhost:8080/service_root_url/reservation/5f8d9dd71d43fd26b8688e73",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
+						"service_root_url",
 						"reservation",
-						"5f85afee6e9c0a84f4777fb4"
+						"5f8d9dd71d43fd26b8688e73"
 					]
 				},
 				"description": "get particular reservation"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/reservation/find/:name",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"user_name\": \"Maria\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/service_root_url/reservation?FLY",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"service_root_url",
+						"reservation"
+					],
+					"query": [
+						{
+							"key": "FLY",
+							"value": null
+						}
+					]
+				},
+				"description": "search reservation by name"
 			},
 			"response": []
 		}

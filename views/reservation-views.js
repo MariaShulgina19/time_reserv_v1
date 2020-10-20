@@ -16,7 +16,7 @@ const reservations_view = ((data) => {
             <h2> Welcome  ${data.user_name}! </h2>
            
            
-            <form  style="display:inline" action="/add-reservation" method="POST">
+            <form  style="display:inline" action="/service_root_url/add-reservation" method="POST">
                 <input class=input2 type="text" name="reservation_name" value="add new reservation name, start time and end ">
                 <input class=input2 type="datetime-local" name="reservation_start" >
                 <input class=input2 type="datetime-local" name="reservation_end" >
@@ -24,7 +24,7 @@ const reservations_view = ((data) => {
                 
                 <button class=button4 type="submit">Add new reservation</button>
             </form>
-            <form  style="display:inline" action="/logout" method="POST">
+            <form  style="display:inline" action="/service_root_url/logout" method="POST">
                 <button class=button2 type="submit">Log out</button>
             </form>
             <h2> All reservations: <h2>
@@ -47,15 +47,21 @@ const reservations_view = ((data) => {
         
         
             
-            <form style="display:inline" action="delete-reservation" method="POST">
+            <form style="display:inline" action="/service_root_url/delete-reservation" method="POST">
                 <input type="hidden" name="reservation_id" value="${reservation._id}">
                 <button  class=button3 type="submit">Delete reservation</button>
              
             </form>
             
-            <form  style="display:inline" action="update-reservation" method="POST">
+            <form  style="display:inline" action="/service_root_url/update-reservation" method="POST">
             <input type="hidden" name="reservation_id_check" value="${reservation._id}">
             <button class=button5 type="submit">Update reservation</button>
+            </form>
+
+            <form style="display:inline" action="/service_root_url/" method="DELETE">
+                <input type="hidden" name="reservation_id" value="${reservation._id}">
+                <button  class=button3 type="submit">Delete reservation by id</button>
+             
             </form>
         </div>
             
