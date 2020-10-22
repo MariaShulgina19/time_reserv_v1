@@ -27,6 +27,7 @@
     /*color: white;*/
     width: 400px;
     padding: 15px 32px;
+    
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -96,6 +97,7 @@
     /*color: white;*/
     width: 200px;
     padding: 15px 32px;
+    margin:15px;
     /* text-align: center; */
     text-decoration: none;
     display: inline-block;

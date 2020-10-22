@@ -3,7 +3,7 @@ const reservation_views = require('../views/reservation-views');
 
 // LEt for data
 const reservation_data = (req) => {
-    let data_reservation = { //data-->data_reservation
+    let data_reservation = { 
       
         name:       req.body.reservation_name,
         start:      new Date(req.body.reservation_start),
@@ -31,8 +31,8 @@ const get_reservations = (req, res, next) => {
             res.send(html);
            // res.send(JSON.stringify(data))
         }).catch(err => {
-            //res.status(500);
-            //res.send(err.errmsg);
+            res.status(500);
+            res.send(err.errmsg);
             console.log(err);
         });
 };
@@ -102,8 +102,8 @@ const post_delete_reservation = (req, res, next) => {
             res.redirect('/service_root_url/');
         });
     }).catch(err => {
-        //res.status(500);
-        //res.send(err.errmsg);
+        res.status(500);
+        res.send(err.errmsg);
         console.log(err);
     });
 };
@@ -148,7 +148,8 @@ const post_reservation = (req, res, next) => {
     console.log (data);
     const time_stamp = new Date();
     let new_reservation = reservation_model(data);
-    
+
+        //checking if end time is after start time
        // if  (req.body.reservation_end > req.body.reservation_start && new_reservation.start > time_stamp ){
 
             new_reservation.save().then(() => {
@@ -189,8 +190,8 @@ const post_update_reservation = (req, res, next) => {   //put-update-reservation
        
         res.redirect('/service_root_url/')
         }).catch(err => {
-            //res.status(500);
-            //res.send(err.errmsg);
+            res.status(500);
+            res.send(err.errmsg);
             console.log(err);
     });
    
@@ -238,8 +239,8 @@ module.exports.get_reservation = get_reservation;
 module.exports.get_reservation_byname = get_reservation_byname; //by name
 module.exports.post_reservation = post_reservation;
 module.exports.post_delete_reservation = post_delete_reservation; 
-module.exports.delete_delete_reservation = delete_delete_reservation; //new
+module.exports.delete_delete_reservation = delete_delete_reservation; //delete
 module.exports.post_update_reservation = post_update_reservation;
 module.exports.post_back_to_reservation=post_back_to_reservation;
-module.exports.put_update_reservation=put_update_reservation;//new put update
-module.exports.patch_update_reservation=patch_update_reservation;//new pach update
+module.exports.put_update_reservation=put_update_reservation;//put update
+module.exports.patch_update_reservation=patch_update_reservation;// pach update

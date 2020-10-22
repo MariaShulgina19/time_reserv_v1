@@ -49,20 +49,13 @@ const reservations_view = ((data) => {
             
             <form style="display:inline" action="/service_root_url/delete-reservation" method="POST">
                 <input type="hidden" name="reservation_id" value="${reservation._id}">
-                <button  class=button3 type="submit">Delete reservation</button>
+                <button  class=button5 type="submit">Delete reservation</button>
              
             </form>
             
-            <form  style="display:inline" action="/service_root_url/update-reservation" method="POST">
-            <input type="hidden" name="reservation_id_check" value="${reservation._id}">
-            <button class=button5 type="submit">Update reservation</button>
-            </form>
+          
 
-            <form style="display:inline" action="/service_root_url/" method="DELETE">
-                <input type="hidden" name="reservation_id" value="${reservation._id}">
-                <button  class=button3 type="submit">Delete reservation by id</button>
-             
-            </form>
+            
         </div>
             
 

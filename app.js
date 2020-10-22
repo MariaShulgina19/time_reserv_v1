@@ -55,23 +55,16 @@ app.post('/service_root_url/logout', auth_controller.post_logout);
 
 //reservation
 app.get('/service_root_url', is_logged_handler, reservation_controller.get_reservations);  ///reservations
-
 //DELETE
 app.post('/service_root_url/delete-reservation', is_logged_handler, reservation_controller.post_delete_reservation); //app.delete
 app.delete('/service_root_url/reservation/:id', is_logged_handler, reservation_controller.delete_delete_reservation);//NEW
-
 //READ
 app.get('/service_root_url/reservation/find/:id', is_logged_handler, reservation_controller.get_reservation);// to check particular reservation by ID
-app.get('/service_root_url/reservation/find/:name', is_logged_handler, reservation_controller.get_reservation_byname);// to check particular reservation by ID CHECK THIS!
-//app.get('/reservation/:id', reservation_controller.get_reservation);//test to check particular reservation only by Postman can be deleted
-
+app.get('/service_root_url/reservation/find/:name', is_logged_handler, reservation_controller.get_reservation_byname);// to check particular reservation by name
 //ADD
 app.post('/service_root_url/add-reservation', is_logged_handler, reservation_controller.post_reservation);
-
-
 //UPDATE
 app.post('/service_root_url/update-reservation', is_logged_handler, reservation_controller.post_update_reservation);
-//app.put('/check-reservation', is_logged_handler, reservation_controller.post_check_reservation);
 app.put('/service_root_url/reservation/:id', is_logged_handler, reservation_controller.put_update_reservation); 
 app.patch('/service_root_url/reservation/:id', is_logged_handler, reservation_controller.patch_update_reservation); 
 
