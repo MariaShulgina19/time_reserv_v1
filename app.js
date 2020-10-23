@@ -59,7 +59,7 @@ app.get('/service_root_url', is_logged_handler, reservation_controller.get_reser
 app.post('/service_root_url/delete-reservation', is_logged_handler, reservation_controller.post_delete_reservation); //app.delete
 app.delete('/service_root_url/reservation/:id', is_logged_handler, reservation_controller.delete_delete_reservation);//NEW
 //READ
-app.get('/service_root_url/reservation/find/:id', is_logged_handler, reservation_controller.get_reservation);// to check particular reservation by ID
+app.get('/service_root_url/reservation/:id', is_logged_handler, reservation_controller.get_reservation);// to check particular reservation by ID
 app.get('/service_root_url/reservation/find/:name', is_logged_handler, reservation_controller.get_reservation_byname);// to check particular reservation by name
 //ADD
 app.post('/service_root_url/add-reservation', is_logged_handler, reservation_controller.post_reservation);
