@@ -91,3 +91,4 @@ mongoose.connect(mongoose_url, {
     console.log('Start Express server');
     app.listen(PORT);
 });
+module.exports = app //new for chai and mocha

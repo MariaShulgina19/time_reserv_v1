@@ -1,0 +1,14 @@
+const chai = require('chai')
+const chaiHttp = require('chai-http')
+const server = require('../app')
+const should = chai.should()
+
+chai.use(chaiHttp)
+
+describe('Langs', () => {
+  it('should list list of langs on / GET')
+  it('should add a single lang on /add POST')
+  it('should add a single lang on /update PUT')
+})
+
+
