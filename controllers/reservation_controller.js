@@ -205,6 +205,7 @@ const put_update_reservation = (req, res, next) => {
     let data = reservation_data(req);
 
     reservation_model.findByIdAndUpdate(id, data, {
+   
         new: true
     }).then((reservation) => {
         res.send(reservation);
@@ -221,7 +222,8 @@ const patch_update_reservation = (req, res, next) => {
     let id = req.params.id;
     let data = reservation_data(req);
 
-    reservation_model.findByIdAndUpdate(id, data, {
+    //reservation_model.findByIdAndUpdate(id, data, {
+    reservation_model.findByIdAndUpdate(id, req.body, {
         new: true
     }).then((reservation) => {
         res.send(reservation);
