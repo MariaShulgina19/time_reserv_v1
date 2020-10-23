@@ -141,7 +141,7 @@ const post_back_to_reservation = (req, res, next) => {
 //CREATE POST
 
 const post_reservation = (req, res, next) => {
-    console.log('apost_reservation ');   
+    console.log('post_reservation ');   
     const user = req.user;
     
     let data = reservation_data(req);
@@ -150,7 +150,7 @@ const post_reservation = (req, res, next) => {
     let new_reservation = reservation_model(data);
 
         //checking if end time is after start time
-       // if  (req.body.reservation_end > req.body.reservation_start && new_reservation.start > time_stamp ){
+        if  (req.body.reservation_end > req.body.reservation_start && new_reservation.start > time_stamp ){
 
             new_reservation.save().then(() => {
                 console.log('reservation saved');
@@ -163,13 +163,13 @@ const post_reservation = (req, res, next) => {
                 //res.send(err.errmsg);
                 console.log(err);
             });                   
-        // }   
+        }   
 
-        // else {
-        //     //res.send("end time shall be after start time")
-        //     console.log("start time shall be before time and in future");
-        //    // return res.redirect('/');
-        //      };
+        else {
+            //res.send("end time shall be after start time")
+            console.log("start time shall be before end time and in future");
+            return res.redirect('/service_root_url/');
+             };
 };
 
 //UPDATE POST/PUT
