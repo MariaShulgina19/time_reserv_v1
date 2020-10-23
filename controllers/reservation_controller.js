@@ -181,8 +181,11 @@ const post_update_reservation = (req, res, next) => {   //put-update-reservation
     id=reservation_id_to_check; 
     console.log('reservation to update', reservation_id_to_check);
     console.log (data);
+    const time_stamp = new Date();
+    let new_reservation = reservation_model(data);
 
-   
+   //checking if end time is after start time
+     if  (req.body.reservation_end > req.body.reservation_start && new_reservation.start > time_stamp ){
         reservation_model.findByIdAndUpdate(id, data, {
             new:true
                    
@@ -193,9 +196,15 @@ const post_update_reservation = (req, res, next) => {   //put-update-reservation
             res.status(500);
             res.send(err.errmsg);
             console.log(err);
-    });
-   
-    };
+        });                   
+    }   
+
+    else {
+        //res.send("end time shall be after start time")
+        console.log("start time shall be before end time and in future");
+        return res.redirect('/service_root_url/');
+         };
+};
 
     //PUT /api/parameter/5eb655f8cc119b3488a007b4
 
